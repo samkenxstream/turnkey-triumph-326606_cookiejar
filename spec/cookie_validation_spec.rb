@@ -232,5 +232,8 @@ describe CookieValidation do
     it 'should max out at 2038 on 32bit systems' do
       expect(CookieValidation.parse_set_cookie('TRACK_USER_P=98237480810003948000782774;expires=Sat, 30-Jun-2040 05:39:49 GMT;path=/')[:expires_at].to_i).to be >= 0x7FFFFFFF
     end
+    it 'should handle samesite correctly' do
+      expect(CookieValidation.parse_set_cookie('TRACK_USER_P=98237480810003948000782774;samesite=Strict;secure=false')[:samesite]).to eq 'strict'
+    end
   end
 end
