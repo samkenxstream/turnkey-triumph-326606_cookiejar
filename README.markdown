@@ -1,4 +1,4 @@
-Ruby CookieJar
+CookieJar
 ==============
 
   **Git**:	[http://github.com/dwaite/cookiejar](http://github.com/dwaite/cookiejar)
